@@ -38,7 +38,20 @@ class App extends Component {
       { id: 9, name: '辐射防护', value: '453739' },
       { id: 0, name: '化学危险品', value: '453697' },
       { id: 1, name: '土木工程', value: '455335' },
-    ]
+    ];
+    /**
+     * 数值渲染样式
+     * @param {*} num 
+     */
+    const ListStyle = num => ({ 
+        fontSize: `${num + 24}px`
+    });
+    // 等价写法
+    // const ListStyle = num => {
+    //   return {
+    //     fontSize: `${num + 24}px`
+    //   }
+    // };
     return (
       <div className="App">
         <header className="App-header">
@@ -59,11 +72,12 @@ class App extends Component {
             }
           </tbody>
         </table>
-        <p className="App-intro">
+        <p style={ListStyle(20)}>
           <a href={this.renderCurrentURL()}>
             {this.renderCurrentURL()}
           </a>
         </p>
+        <button name="c-me" value="请点击我" onClick={e => window.alert(e.target.value) }>点击这里</button>
       </div>
     );
   }
