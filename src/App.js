@@ -47,9 +47,7 @@ class App extends Component {
         </header>
         <select name="knowid" id="knowid" value={this.state.knowid} onChange={e => this.handleChange(e)}>
           {
-            knowidArr.map(item => {
-              return <option key={item.id} value={item.value}>{item.name}</option>
-            })
+            knowidArr.map(item => <option key={item.id} value={item.value}>{item.name}</option>)
           }
         </select>
         <br/>
@@ -57,9 +55,7 @@ class App extends Component {
         <table>
           <tbody>
             {
-              knowidArr.map(item => {
-                return <tr><td>{item.name}</td><td><a href={this.renderURL(item.value)}>{this.renderURL(item.value)}</a></td></tr>
-              })
+              knowidArr.map(item => <tr><td>{item.name}</td><td><a href={this.renderURL(item.value)}>{this.renderURL(item.value)}</a></td></tr>)
             }
           </tbody>
         </table>
